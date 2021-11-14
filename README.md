@@ -6,3 +6,5 @@ This program will read information from a txt template file (selected by the use
 The program is designed to be flexible and allow for a random number of required fields to be entered.
 
 Simple template files are provided for proof of concept.
+
+Credit to squareRoot17 for their tooltip solution used in this project. https://stackoverflow.com/questions/20399243/display-message-when-hovering-over-something-with-mouse-cursor-in-python
