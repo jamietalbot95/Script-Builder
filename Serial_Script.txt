@@ -1,0 +1,39 @@
+#required inputs#
+
+#*Login Name
+#@The username used to log into the router
+#*Login Password
+#@The password used to log into the router
+#*Asset Number
+#@The asset number of the local gateway router, cannot be greater than 250.  
+
+#end of required inputs#
+
+#start of calculated inputs#
+
+#+Management IP
+#+DHCP Start
+#+DHCP End
+#+Loopback IP
+#+LAN IP
+#+WAN IP
+
+#end of calculated inputs#
+
+#start of script#
+nodename SSH AUTHMODE "Password" 
+nodename ACCO ANAME "*Login Name" AT AD 
+nodename ACCO ANAME "*Login Name" PWMD5 "*Login Password" 
+nodename IPSUBNET NET LAN CHAN 0:2 ADDR *LAN IP 
+nodename IPSUBNET NET LAN CHAN 0:2 MASK 255.255.0.0 
+nodename IPSUBNET NET LAN CHAN 0:1 ADDR *Management IP 
+nodename IPSUBNET NET LAN CHAN 0:1 MASK 255.255.255.128 
+nodename IPSUBNET NET LAN CHAN 0:1 DHCPSSTART *DHCP Start
+nodename IPSUBNET NET LAN CHAN 0:1 DHCPSEND *DHCP End 
+nodename IPSUBNET NET LAN CHAN 0:1 DHCPGATEWAY *Management IP
+nodename IPSUBNET NET LOOP CHAN 0:0 ADDR *Loopback IP
+nodename IPSUBNET NET LOOP CHAN 0:0 MASK 255.255.255.255 
+nodename IPSUBNET NET PPP CHAN 0:1 ADDR *WAN IP
+nodename IPSUBNET NET PPP CHAN 0:1 MASK 255.255.255.252
+nodename OSPFSYS ID *Loopback IP 
+nodename u
