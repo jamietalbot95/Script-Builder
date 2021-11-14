@@ -1,0 +1,22 @@
+#required inputs#
+
+#*Asset Number
+#@The local asset number of the local gateway router, cannot be greater than 250. 
+#*Bandwidth
+#@Bandwidth of the link. Obtained from DCSI. Example 1024 = 1Mbps
+#*Hub Asset Number
+#@The local asset number of the remote gateway router, cannot be greater than 250.
+
+#end of required inputs#
+
+#start of calculated inputs#
+
+#+Interface IP
+
+#end of calculated inputs#
+
+#start of script#
+in this line please replace *Asset Number
+total bandwidth for the link is *Bandwidth
+there is nothing to be added on this line but i am still important
+interface g/0/0 = *Interface IP
