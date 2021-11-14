@@ -8,3 +8,5 @@ The program is designed to be flexible and allow for a random number of required
 Simple template files are provided for proof of concept.
 
 Credit to squareRoot17 for their tooltip solution used in this project. https://stackoverflow.com/questions/20399243/display-message-when-hovering-over-something-with-mouse-cursor-in-python
+
+Please note: Supplied scripts have been simplified to act as a proof of concept.
